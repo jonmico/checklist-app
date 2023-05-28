@@ -1,12 +1,14 @@
+import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
+import ChecklistForm from './ChecklistForm';
 import ChecklistItem from './ChecklistItem';
 import Check from '../models/Check';
 
 export default function Checklist() {
   const [list, setList] = useState<Check[]>([
-    { id: 'string1', text: 'walk the dog', completed: true },
-    { id: 'check2', text: 'walk the cat', completed: false },
-    { id: 'check3', text: 'make dinner', completed: false },
+    { id: uuid(), text: 'walk the dog', completed: true },
+    { id: uuid(), text: 'walk the cat', completed: false },
+    { id: uuid(), text: 'make dinner', completed: false },
   ]);
 
   return (
@@ -17,6 +19,7 @@ export default function Checklist() {
           <ChecklistItem key={item.id} checkItem={item} />
         ))}
       </ul>
+      <ChecklistForm />
     </div>
   );
 }
