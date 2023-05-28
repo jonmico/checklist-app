@@ -1,16 +1,16 @@
 import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import ChecklistForm from './ChecklistForm';
-import ChecklistItem from './ChecklistItem';
 import CompletedChecklist from './CompletedChecklist';
 import Check from '../models/Check';
+import NotCompletedChecklist from './NotCompletedChecklist';
 
 export default function Checklist() {
   const [list, setList] = useState<Check[]>([]);
   const [completedList, setCompletedList] = useState<Check[]>([]);
 
   function addToChecklist(text: string) {
-    setList((currList) => [...currList, { id: uuid(), text, completed: true }]);
+    setList((currList) => [...currList, { id: uuid(), text }]);
   }
 
   function removeFromChecklist(id: string) {
@@ -34,20 +34,20 @@ export default function Checklist() {
   return (
     <div>
       <h1>CheckList App</h1>
-      <ul>
-        {list.map((item) => (
-          <ChecklistItem
-            key={item.id}
-            checkItem={item}
-            removeFromChecklist={removeFromChecklist}
-          />
-        ))}
-      </ul>
+
+      {list.length > 0 && (
+        <NotCompletedChecklist
+          list={list}
+          removeFromChecklist={removeFromChecklist}
+        />
+      )}
       <ChecklistForm addToChecklist={addToChecklist} />
-      <CompletedChecklist
-        completedList={completedList}
-        removeFromCompletedChecklist={removeFromCompletedChecklist}
-      />
+      {completedList.length > 0 && (
+        <CompletedChecklist
+          completedList={completedList}
+          removeFromCompletedChecklist={removeFromCompletedChecklist}
+        />
+      )}
     </div>
   );
 }

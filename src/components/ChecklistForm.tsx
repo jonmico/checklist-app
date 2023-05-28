@@ -28,7 +28,9 @@ export default function ChecklistForm({ addToChecklist }: ChecklistFormProps) {
         value={value}
         onChange={handleTextChange}
       />
-      <button type='submit'>BUTTON</button>
+      <button type='submit' disabled={value === ''}>
+        BUTTON
+      </button>
     </form>
   );
 }

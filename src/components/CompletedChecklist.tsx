@@ -14,6 +14,7 @@ export default function CompletedChecklist({
     <ul>
       {completedList.map((item) => (
         <ChecklistItem
+          key={item.id}
           checkItem={item}
           removeFromCompletedChecklist={removeFromCompletedChecklist}
         />
