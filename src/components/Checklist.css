@@ -1,0 +1,11 @@
+.Checklist {
+  width: 40%;
+  margin: auto;
+  background-color: #511730;
+  border: 2px solid #e0d68a;
+}
+
+.Checklist h1 {
+  text-align: center;
+  color: #e0d68a;
+}

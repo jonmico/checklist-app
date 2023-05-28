@@ -1,0 +1,11 @@
+.ChecklistItem {
+  color: #cb9173;
+  list-style: inside;
+  width: 50%;
+  margin: auto;
+}
+
+.ChecklistItem:hover {
+  cursor: pointer;
+  color: #deb8a6;
+}

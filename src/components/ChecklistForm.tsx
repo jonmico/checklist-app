@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ChecklistForm.css';
 
 interface ChecklistFormProps {
   addToChecklist: (text: string) => void;
@@ -18,7 +19,7 @@ export default function ChecklistForm({ addToChecklist }: ChecklistFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='ChecklistForm' onSubmit={handleSubmit}>
       <label htmlFor='new-checklist-item'>Add a new item: </label>
       <input
         type='text'
@@ -29,7 +30,7 @@ export default function ChecklistForm({ addToChecklist }: ChecklistFormProps) {
         onChange={handleTextChange}
       />
       <button type='submit' disabled={value === ''}>
-        BUTTON
+        Submit!
       </button>
     </form>
   );

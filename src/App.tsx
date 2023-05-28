@@ -1,8 +1,9 @@
 import Checklist from './components/Checklist';
+import './App.css';
 
 export default function App() {
   return (
-    <div>
+    <div className='App'>
       <Checklist />
     </div>
   );

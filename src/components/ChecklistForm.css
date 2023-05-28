@@ -1,0 +1,39 @@
+.ChecklistForm {
+  text-align: center;
+  color: #e0d68a;
+}
+
+.ChecklistForm button {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin: 10px auto;
+  width: 125px;
+  height: 30px;
+  background-color: #511730;
+  border: 2px solid #e0d68a;
+  color: #e0d68a;
+}
+
+.ChecklistForm button:hover {
+  cursor: pointer;
+  background-color: #7f244c;
+}
+
+.ChecklistForm button:disabled {
+  cursor: not-allowed;
+  background-color: #200913;
+}
+
+.ChecklistForm input {
+  background-color: #511730;
+  border: 2px solid #e0d68a;
+  color: #cb9173;
+}
+
+.ChecklistForm input:focus {
+  outline: none;
+  border: 2px solid #fbfaef;
+  background-color: #e4a0bd;
+  color: #511730;
+}

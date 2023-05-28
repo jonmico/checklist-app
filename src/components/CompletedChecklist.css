@@ -1,0 +1,5 @@
+.CompletedChecklist ul div li {
+  color: #a35e3e;
+  font-style: italic;
+  text-decoration: line-through;
+}

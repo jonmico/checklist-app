@@ -4,6 +4,7 @@ import ChecklistForm from './ChecklistForm';
 import CompletedChecklist from './CompletedChecklist';
 import Check from '../models/Check';
 import NotCompletedChecklist from './NotCompletedChecklist';
+import './Checklist.css';
 
 export default function Checklist() {
   const [list, setList] = useState<Check[]>([]);
@@ -32,7 +33,7 @@ export default function Checklist() {
   }
 
   return (
-    <div>
+    <div className='Checklist'>
       <h1>CheckList App</h1>
 
       {list.length > 0 && (
