@@ -21,6 +21,16 @@ export default function Checklist() {
     setList((currList) => currList.filter((item) => item.id !== id));
   }
 
+  function removeFromCompletedChecklist(id: string) {
+    setList((currList) => [
+      ...currList,
+      ...completedList.filter((item) => item.id === id),
+    ]);
+    setCompletedList((currCompletedList) =>
+      currCompletedList.filter((item) => item.id !== id)
+    );
+  }
+
   return (
     <div>
       <h1>CheckList App</h1>
@@ -36,7 +46,7 @@ export default function Checklist() {
       <ChecklistForm addToChecklist={addToChecklist} />
       <CompletedChecklist
         completedList={completedList}
-        removeFromChecklist={removeFromChecklist}
+        removeFromCompletedChecklist={removeFromCompletedChecklist}
       />
     </div>
   );

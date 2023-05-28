@@ -3,19 +3,19 @@ import ChecklistItem from './ChecklistItem';
 
 interface CompletedChecklistProps {
   completedList: Check[];
-  removeFromChecklist: (id: string) => void;
+  removeFromCompletedChecklist: (id: string) => void;
 }
 
 export default function CompletedChecklist({
   completedList,
-  removeFromChecklist,
+  removeFromCompletedChecklist,
 }: CompletedChecklistProps) {
   return (
     <ul>
       {completedList.map((item) => (
         <ChecklistItem
           checkItem={item}
-          removeFromChecklist={removeFromChecklist}
+          removeFromCompletedChecklist={removeFromCompletedChecklist}
         />
       ))}
     </ul>
