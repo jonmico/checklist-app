@@ -1,10 +1,6 @@
 import { useState } from 'react';
-
-interface Check {
-  id: string;
-  text: string;
-  completed: boolean;
-}
+import ChecklistItem from './ChecklistItem';
+import Check from '../models/Check';
 
 export default function Checklist() {
   const [list, setList] = useState<Check[]>([
@@ -18,7 +14,7 @@ export default function Checklist() {
       <h1>CheckList App</h1>
       <ul>
         {list.map((item) => (
-          <li key={item.id}>{item.text}</li>
+          <ChecklistItem key={item.id} checkItem={item} />
         ))}
       </ul>
     </div>
