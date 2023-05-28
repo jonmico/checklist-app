@@ -1,6 +1,6 @@
 import ChecklistItem from './ChecklistItem';
 import Check from '../models/Check';
-import './NotCompletedChecklist.css';
+
 interface NotCompletedChecklistProps {
   list: Check[];
   removeFromChecklist: (id: string) => void;
