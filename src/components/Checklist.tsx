@@ -2,10 +2,12 @@ import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import ChecklistForm from './ChecklistForm';
 import ChecklistItem from './ChecklistItem';
+import CompletedChecklist from './CompletedChecklist';
 import Check from '../models/Check';
 
 export default function Checklist() {
   const [list, setList] = useState<Check[]>([]);
+  const [completedList, setCompletedList] = useState<Check[]>([]);
 
   function addToChecklist(text: string) {
     setList((currList) => [...currList, { id: uuid(), text, completed: true }]);
@@ -20,6 +22,7 @@ export default function Checklist() {
         ))}
       </ul>
       <ChecklistForm addToChecklist={addToChecklist} />
+      <CompletedChecklist />
     </div>
   );
 }

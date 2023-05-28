@@ -5,11 +5,9 @@ interface ChecklistItemProps {
 }
 
 export default function ChecklistItem({ checkItem }: ChecklistItemProps) {
-  const { text, completed } = checkItem;
-
   return (
     <div>
-      <li>{text}</li>
+      <li>{checkItem.text}</li>
     </div>
   );
 }
