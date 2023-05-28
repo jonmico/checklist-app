@@ -13,12 +13,20 @@ export default function Checklist() {
     setList((currList) => [...currList, { id: uuid(), text, completed: true }]);
   }
 
+  function removeFromChecklist(id: string) {
+    setList((currList) => currList.filter((item) => item.id !== id));
+  }
+
   return (
     <div>
       <h1>CheckList App</h1>
       <ul>
         {list.map((item) => (
-          <ChecklistItem key={item.id} checkItem={item} />
+          <ChecklistItem
+            key={item.id}
+            checkItem={item}
+            removeFromChecklist={removeFromChecklist}
+          />
         ))}
       </ul>
       <ChecklistForm addToChecklist={addToChecklist} />
