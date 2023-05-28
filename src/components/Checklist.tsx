@@ -5,11 +5,11 @@ import ChecklistItem from './ChecklistItem';
 import Check from '../models/Check';
 
 export default function Checklist() {
-  const [list, setList] = useState<Check[]>([
-    { id: uuid(), text: 'walk the dog', completed: true },
-    { id: uuid(), text: 'walk the cat', completed: false },
-    { id: uuid(), text: 'make dinner', completed: false },
-  ]);
+  const [list, setList] = useState<Check[]>([]);
+
+  function addToChecklist(text: string) {
+    setList((currList) => [...currList, { id: uuid(), text, completed: true }]);
+  }
 
   return (
     <div>
@@ -19,7 +19,7 @@ export default function Checklist() {
           <ChecklistItem key={item.id} checkItem={item} />
         ))}
       </ul>
-      <ChecklistForm />
+      <ChecklistForm addToChecklist={addToChecklist} />
     </div>
   );
 }
